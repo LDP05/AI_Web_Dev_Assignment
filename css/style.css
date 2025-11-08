@@ -1,0 +1,267 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
+    display: flex;
+    min-height: 100vh;
+}
+
+.left-section {
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 60px 40px;
+    color: white;
+    position: relative;
+    overflow: hidden;
+}
+
+.background-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    transform: scale(1);
+    z-index: 0;
+}
+
+.left-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.4) 100%);
+}
+
+.left-content {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+}
+
+.name {
+    font-size: 72px;
+    font-weight: 700;
+    margin-bottom: 30px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.tagline {
+    font-size: 22px;
+    font-style: italic;
+    line-height: 1.4;
+    max-width: 320px;
+    margin: 0 auto;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.right-section {
+    width: 60%;
+    background: #1a2332;
+    padding: 60px 80px;
+    color: white;
+    overflow-y: auto;
+}
+
+.section {
+    margin-bottom: 50px;
+}
+
+.about-section {
+    background: #2a3d52;
+    padding: 40px;
+    margin-left: -80px;
+    margin-right: -80px;
+    margin-top: -60px;
+    padding-top: 60px;
+    padding-left: 80px;
+    padding-right: 80px;
+    margin-bottom: 50px;
+}
+
+.section-title {
+    color: #ffa500;
+    font-size: 18px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+
+.about-content {
+    font-size: 16px;
+    line-height: 1.7;
+    color: #e0e0e0;
+}
+
+.about-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 30px;
+}
+
+.info-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+}
+
+.info-row {
+    display: grid;
+    grid-template-columns: 180px 1fr;
+    gap: 15px;
+    padding: 5px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+    align-items: center;
+}
+
+.info-label {
+    font-style: italic;
+    color: white;
+    text-transform: uppercase;
+    font-weight: 300;
+}
+
+.info-value {
+    color: white;
+    font-weight: 500;
+    text-align: right;
+}
+
+.literacy-dots {
+    display: flex;
+    gap: 8px;
+    justify-content: flex-end;
+}
+
+.dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: #9acd32;
+}
+
+.list-item {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 15px;
+    font-size: 15px;
+    line-height: 1.6;
+    color: #e0e0e0;
+}
+
+.list-item::before {
+    content: '●';
+    color: #9acd32;
+    font-size: 16px;
+    margin-right: 15px;
+    flex-shrink: 0;
+}
+
+.two-column {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    margin-bottom: 50px;
+}
+
+.two-column .section {
+    margin-bottom: 0;
+}
+
+.right-column {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+}
+
+/* Mobile-first responsive design */
+/* Base styles (mobile) */
+body {
+    flex-direction: column;
+}
+
+.left-section,
+.right-section {
+    width: 100%;
+}
+
+.left-section {
+    min-height: 400px;
+}
+
+.right-section {
+    padding: 40px 30px;
+}
+
+.name {
+    font-size: 48px;
+}
+
+.tagline {
+    font-size: 18px;
+}
+
+.two-column {
+    grid-template-columns: 1fr;
+    gap: 30px;
+}
+
+.two-column .section {
+    margin-bottom: 30px;
+}
+
+.two-column .section:last-child {
+    margin-bottom: 0;
+}
+
+/* Desktop and up */
+@media screen and (min-width: 650px) {
+    body {
+        flex-direction: row;
+    }
+
+    .left-section {
+        width: 40%;
+    }
+
+    .right-section {
+        width: 60%;
+        padding: 60px 80px;
+    }
+
+    .about-section {
+        margin-left: -80px;
+        margin-right: -80px;
+        margin-top: -60px;
+        padding: 60px 80px 40px 80px;
+    }
+
+    .name {
+        font-size: 72px;
+    }
+
+    .tagline {
+        font-size: 22px;
+    }
+
+    .two-column {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .about-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 40px;
+    }
+}
